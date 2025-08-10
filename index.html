@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>REST Countries</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body onload="getAllCountries()" class="dm-bg dm-txt">
+        <nav id="nav-bar" class="dm-bg-el">
+            <h2>Where in the world?</h2>
+            <div>
+                <label style="display: flex; align-items: center;" for="btn-theme-mode">
+                    <img style="padding: 0; margin-right: 10px;" class="dm-img-icon" src="assets/lua.png"
+                        alt=""></label>
+                <button id="btn-theme-mode"
+                    style="padding:0; display: flex; justify-content: center; align-items: center;" type="button"
+                    onclick="changeTheme()" class="dm-txt">DarkMode</button>
+            </div>
+        </nav>
+        <div id="header-searchs">
+            <label id="search-input-bar" class="input-model dm-bg-el" for="search-bar">
+                <label for="search-bar"><img class="dm-img-icon" src="assets/search.png" alt=""></label>
+                <input autocomplete="off" class="dm-txt" type="text" name="search-bar" id="search-bar"
+                    placeholder="Search for a country...">
+            </label>
+
+            <label id="btn-back-container" class="input-model dm-bg-el" for="btn-back">
+                <label for="btn-back"><img class="dm-img-icon" src="assets/back.png" alt=""></label>
+                <button class="dm-txt" onclick="back()" type="button" name="btn-back" id="btn-back">Back</button>
+            </label>
+            <div id="filter-toggle-container">
+                <label class="input-model dm-bg-el" for="search-filter">
+                    <button class="dm-txt" onclick="showFilters()" type="button" name="search-filter"
+                        id="search-filter">Filter by
+                        region</button>
+                    <label for="search-filter"><img class="dm-img-icon" src="assets/arrow.png" alt=""></label>
+                </label>
+                <div id="toogle-filters" class="dm-bg-el">
+                    <button class="dm-txt dm-bg-el" onclick="getCountriesByRegion('Africa')">Africa</button>
+                    <button class="dm-txt dm-bg-el" onclick="getCountriesByRegion('Americas')">America</button>
+                    <button class="dm-txt dm-bg-el" onclick="getCountriesByRegion('Asia')">Asia</button>
+                    <button class="dm-txt dm-bg-el" onclick="getCountriesByRegion('Europe')">Europe</button>
+                    <button class="dm-txt dm-bg-el" onclick="getCountriesByRegion('Oceania')">Oceania</button>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div id="main-countries-container">
+        </div>
+
+        <div class="dm-txt" id="countryDetails" style="display: none;">
+            <img class="dm-txt" id="img-country-detail" src="https://flagcdn.com/w320/md.png" alt="Bandeira do País">
+            <div class="dm-txt" id="all-country-details-container">
+                <h2 class="dm-txt" id="txt-country-name">NOME DO PAIS</h2>
+                <div class="dm-txt" id="txt-sides-details-container">
+                    <div class="dm-txt" id="txt-side1-detail-country">
+                        <p class="dm-txt" id="txt-native-name">Native Name: Bélgië</p>
+                        <p class="dm-txt" id="txt-population">Population: 11,319,511</p>
+                        <p class="dm-txt" id="txt-region">Region: Europe</p>
+                        <p class="dm-txt" id="txt-subregion">Sub Region: Western Europe</p>
+                        <p class="dm-txt" id="txt-capital">Capital: Brussels</p>
+                    </div>
+                    <div class="dm-txt" id="txt-side2-detail-country">
+                        <p class="dm-txt" id="txt-tld">Top Level Domain: .be</p>
+                        <p class="dm-txt" id="txt-currencies">Currencies: Euro</p>
+                        <p class="dm-txt" id="txt-languages">Languages: Dutch, French, German</p>
+                    </div>
+                </div>
+                <div class="dm-txt" id="btns-borders-container">
+                    <p>Border Countries:</p>
+                    <div class="dm-txt" id="btns-borders">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+
+    <script src="index.js"></script>
+
+</html>
